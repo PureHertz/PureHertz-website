@@ -2,6 +2,7 @@
   {
     "listing": "/works.html",
     "items": [
+      "/posts/UART-distance/index.html",
       "/posts/digi-pod/index.html",
       "/posts/tinySA_pc-control/index.html",
       "/posts/simple-digitizer/index.html",
@@ -29,6 +30,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/UART-distance/index.html",
       "/posts/digi-pod/index.html",
       "/posts/tinySA_pc-control/index.html",
       "/posts/simple-digitizer/index.html",

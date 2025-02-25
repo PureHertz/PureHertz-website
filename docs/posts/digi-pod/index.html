@@ -206,7 +206,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">2025-02-03</p>
+        <p class="date-modified">2025-02-25</p>
       </div>
     </div>
       
@@ -429,6 +429,7 @@ window.Quarto = {
 </section>
 <section id="circuitpythonでのspi通信" class="level2">
 <h2 class="anchored" data-anchor-id="circuitpythonでのspi通信">CircuitPythonでのSPI通信</h2>
+<p>本節は<a href="https://learn.adafruit.com/circuitpython-basics-i2c-and-spi/spi-devices">Adafruit SPI Devices ドキュメント</a>の要約です。 実機での動作を確認せずにドキュメントを和訳しただけの部分もあるのはご容赦ください。</p>
 <section id="spiプロトコル" class="level3">
 <h3 class="anchored" data-anchor-id="spiプロトコル">SPIプロトコル</h3>
 <p>CircuitPythonでSPI通信を行うには、<code>board</code>, <code>busio</code>, <code>digitalio</code>モジュールをインストールする必要があります。</p>
@@ -501,7 +502,7 @@ window.Quarto = {
 <p>SPIDeviceライブラリを使ってMCP4261を制御する関数を作ります。とりあえず、抵抗の値の書き込みと読み込みだけを目指します。</p>
 <section id="書き込み" class="level3">
 <h3 class="anchored" data-anchor-id="書き込み">書き込み</h3>
-<p>ポテンショのポジションを揮発性メモリに書き込む関数。</p>
+<p>ポテンショのポジションを揮発性メモリに書き込む関数です。</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> pod_write(device, wiper, val):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> val <span class="op">&gt;</span> <span class="dv">256</span>:</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        val <span class="op">=</span> <span class="dv">256</span></span>
@@ -512,13 +513,13 @@ window.Quarto = {
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        spi.write(buf.to_bytes(<span class="dv">2</span>, <span class="st">'big'</span>))  <span class="co"># バッファのデータを書き込む</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>device: SPIデバイス・インスタンス</li>
-<li>wiper: ポテンショの番号。<code>0</code> or <code>1</code></li>
-<li>val: 0-256</li>
+<li>wiper: ポテンショの番号（<code>0</code> or <code>1</code>）</li>
+<li>val: ポテンショの位置（<code>0</code>-<code>256</code>）</li>
 </ul>
 </section>
 <section id="読み込み" class="level3">
 <h3 class="anchored" data-anchor-id="読み込み">読み込み</h3>
-<p>ポテンショのポジションを揮発性メモリから読み込む関数。</p>
+<p>ポテンショのポジションを揮発性メモリから読み込む関数です。</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> pod_read(device, wiper):</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    buf <span class="op">=</span> (wipre <span class="op">&lt;&lt;</span> <span class="dv">12</span> <span class="op">|</span> <span class="bn">0b11</span> <span class="op">&lt;&lt;</span> <span class="dv">10</span>)  <span class="co"># D12にwiper, [D11:D10]に読み込みコマンド</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> device:</span>
@@ -527,11 +528,12 @@ window.Quarto = {
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (result[<span class="dv">0</span>] <span class="op">&amp;</span> <span class="bn">0b0000_0001</span>) <span class="op">&lt;&lt;</span> <span class="dv">8</span> <span class="op">|</span> result[<span class="dv">1</span>]  <span class="co"># 2バイト[D15:D0]から[D8:D0]を取り出してデコード</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>device: SPIデバイス・インスタンス</li>
-<li>wiper: ポテンショの番号。<code>0</code> or <code>1</code></li>
+<li>wiper: ポテンショの番号（<code>0</code> or <code>1</code>）</li>
 </ul>
 </section>
 <section id="テストコード" class="level3">
 <h3 class="anchored" data-anchor-id="テストコード">テストコード</h3>
+<p>以下のコードをKB2040に書き込んでテストしてみました。 <a href="#spideviceライブラリ">SPDeviceライブラリ</a>での説明通り、ライブラリから<strong>adafruit_bus_device</strong>フォルダをボードの<code>CIRCUITPY</code>ドライブの<code>lib</code>フォルダにコピーしておきます。</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># === パッケージ読み込み ===</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> board</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> busio</span>
@@ -577,6 +579,7 @@ window.Quarto = {
 <span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(pod_read(device, <span class="dv">0</span>))  <span class="co"># ポジションの読み込み</span></span>
 <span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>実行すると、抵抗値が三角波状に増減を繰り返すはずです。 テスタで確認する場合には変化が速すぎるので、最終行を<code>time.sleep(1)</code>などに調整してください。</p>
 </section>
 </section>
 <section id="参考資料" class="level2">
@@ -701,6 +704,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           if (link.getAttribute("rel") === null) {
             link.setAttribute("rel", "noopener");
           }
+          // default icon
+          link.classList.add("external");
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

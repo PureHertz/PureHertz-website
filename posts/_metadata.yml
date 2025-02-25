@@ -11,3 +11,6 @@ date-format: iso
 # figure layout
 fig-width: 400
 fig-align: left
+
+# External link
+link-external-icon: true

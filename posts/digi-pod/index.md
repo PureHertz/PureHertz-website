@@ -111,6 +111,9 @@ MCP4261のSPIコマンドの概要は、データシートの下図を参照し�
 CircuitPythonでのSPI通信
 ------------------------
 
+本節は[Adafruit SPI Devices ドキュメント](https://learn.adafruit.com/circuitpython-basics-i2c-and-spi/spi-devices)の要約です。
+実機での動作を確認せずにドキュメントを和訳しただけの部分もあるのはご容赦ください。
+
 ### SPIプロトコル
 
 CircuitPythonでSPI通信を行うには、`board`, `busio`, `digitalio`モジュールをインストールする必要があります。
@@ -234,7 +237,7 @@ SPIDeviceライブラリを使ってMCP4261を制御する関数を作ります�
 
 ### 書き込み
 
-ポテンショのポジションを揮発性メモリに書き込む関数。
+ポテンショのポジションを揮発性メモリに書き込む関数です。
 
 ```python
 def pod_write(device, wiper, val):
@@ -248,13 +251,13 @@ def pod_write(device, wiper, val):
 ```
 
 - device: SPIデバイス・インスタンス
-- wiper: ポテンショの番号。`0` or `1`
-- val: 0-256
+- wiper: ポテンショの番号（`0` or `1`）
+- val: ポテンショの位置（`0`-`256`）
 
 
 ### 読み込み
 
-ポテンショのポジションを揮発性メモリから読み込む関数。
+ポテンショのポジションを揮発性メモリから読み込む関数です。
 
 ```python
 def pod_read(device, wiper):
@@ -266,10 +269,13 @@ def pod_read(device, wiper):
 ```
 
 - device: SPIデバイス・インスタンス
-- wiper: ポテンショの番号。`0` or `1`
+- wiper: ポテンショの番号（`0` or `1`）
 
 
 ### テストコード
+
+以下のコードをKB2040に書き込んでテストしてみました。
+[SPDeviceライブラリ](#spideviceライブラリ)での説明通り、ライブラリから**adafruit_bus_device**フォルダをボードの`CIRCUITPY`ドライブの`lib`フォルダにコピーしておきます。
 
 ```python
 # === パッケージ読み込み ===
@@ -318,6 +324,9 @@ while True:
     
     time.sleep(0.1)
 ```
+
+実行すると、抵抗値が三角波状に増減を繰り返すはずです。
+テスタで確認する場合には変化が速すぎるので、最終行を`time.sleep(1)`などに調整してください。
 
 
 参考資料
