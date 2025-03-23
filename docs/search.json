@@ -389,7 +389,7 @@
     "href": "index.html",
     "title": "Welcome to PureHertz Laboratory",
     "section": "",
-    "text": "Magic of Frequency —Optics, Electronics, and Music\n\nレーザー物理の研究のために開発・製作した周辺回路・装置\n趣味で制作した楽曲\nその他、研究・趣味に役立つかもしれない情報\n\n\n\n\nContents\n\nAbout\n\n当サイトについて\n\nWorks\n\n開発、製作、制作した回路、装置、楽曲やその周辺の情報をBlog形式で綴っています。\n記事がたまってきたら、内容ごとにまとめようかと思っています。\n\n\n\n\nRecent posts\n\n\n\n\n\nTitle\n\n\nDate\n\n\nModified\n\n\n\n\n\n\nマイコン間のUART通信距離\n\n\n2025-02-26\n\n\n2025-02-26\n\n\n\n\nデジタルポテンショを試してみた\n\n\n2025-02-03\n\n\n2025-02-26\n\n\n\n\ntinySA UltraのPC制御\n\n\n2025-01-25\n\n\n2025-02-26\n\n\n\n\n小型マイコンボードで作るシンプルなデジタイザ\n\n\n2024-08-18\n\n\n2024-08-30\n\n\n\n\nQuartoでウェブサイトを作りQuarto Pubで公開する\n\n\n2024-07-15\n\n\n2024-07-15\n\n\n\n\nCircuitPythonを使えるようにする（KB2040）\n\n\n2024-07-08\n\n\n2024-07-08\n\n\n\n\nPythonの環境構築\n\n\n2024-06-29\n\n\n2024-06-29\n\n\n\n\nFPGA (MachXO2) の書き込み\n\n\n2024-04-28\n\n\n2024-06-29\n\n\n\n\n\nNo matching items"
+    "text": "Magic of Frequency —Optics, Electronics, and Music\n\nレーザー物理の研究のために開発・製作した周辺回路・装置\n趣味で制作した楽曲\nその他、研究・趣味に役立つかもしれない情報\n\n\n\n\nContents\n\nAbout\n\n当サイトについて\n\nWorks\n\n開発、製作、制作した回路、装置、楽曲やその周辺の情報をBlog形式で綴っています。\n記事がたまってきたら、内容ごとにまとめようかと思っています。\n\n\n\n\nRecent posts\n\n\n\n\n\nTitle\n\n\nDate\n\n\nModified\n\n\n\n\n\n\nマイコン間のUART通信距離\n\n\n2025-02-26\n\n\n2025-03-23\n\n\n\n\nデジタルポテンショを試してみた\n\n\n2025-02-03\n\n\n2025-03-23\n\n\n\n\ntinySA UltraのPC制御\n\n\n2025-01-25\n\n\n2025-03-23\n\n\n\n\n小型マイコンボードで作るシンプルなデジタイザ\n\n\n2024-08-18\n\n\n2024-08-30\n\n\n\n\nQuartoでウェブサイトを作りQuarto Pubで公開する\n\n\n2024-07-15\n\n\n2024-07-15\n\n\n\n\nCircuitPythonを使えるようにする（KB2040）\n\n\n2024-07-08\n\n\n2024-07-08\n\n\n\n\nPythonの環境構築\n\n\n2024-06-29\n\n\n2024-06-29\n\n\n\n\nFPGA (MachXO2) の書き込み\n\n\n2024-04-28\n\n\n2024-06-29\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/2024-03-01/index.html",
@@ -669,7 +669,7 @@
     "href": "posts/tinySA_pc-control/index.html#tinysaのlabview-vi",
     "title": "tinySA UltraのPC制御",
     "section": "tinySAのLabVIEW VI",
-    "text": "tinySAのLabVIEW VI\n最低限のデータ取得動作ができるようにVIを作ってみました。\n\ntinySA_20250125.zip\n\nscanraw.vi（レベルデータ取得）\nfrequencies.vi（周波数データ取得）\nrbw.vi（RBW設定）\nattenuate.vi（減衰器設定）"
+    "text": "tinySAのLabVIEW VI\n最低限のデータ取得動作ができるようにVIを作ってみました。 GitHubにアップしていますので、興味のある方はご利用ください。\n\nhttps://github.com/PureHertz/tinySA_labview"
   },
   {
     "objectID": "posts/tinySA_pc-control/index.html#参考資料",
@@ -817,5 +817,12 @@
     "title": "You Go, We Go",
     "section": "Lyrics",
     "text": "Lyrics\nあの日見た 明日に僕ら立っている\n積み上げてきた 昨日で作る塔の上\n“AI”が紡いだ 言葉が時間を超えても\nその続きは 君に歌ってほしいんだ\n未だ見ぬ海原が Stage\n波が運んでくる Message\n縺れ合ういくつもの 糸が解けていく\nこの世界を変えていくために 僕ら何ができるだろう\n繋がって生まれる力を 君はもう知っている\n描いた未来へと続いていく 道はどこにあるのだろう\nともに挑み つぎを創る この手を掴んで\nYou go, we go\n限りなく 続いていく日々のために\n限りある 今を繋げて輪にする\n全てのことが Dream maker\n僕らを驚かせる Entertainer\n選り好みしていたら 置いていかれるだけさ\nこの世界を変えていくために 僕ら何ができるだろう\n種をまき花が開いたら 実をつけるまで\n遠回りで残した足跡は やがて虹を描くだろう\nともに挑み つぎを創る この手を離さず\nYou go, we go\nこの世界を変えていくために 僕ら何ができるだろう\n繋がって生まれる力で 時計の針は進む\n描いた未来へと続いていく 道を僕ら並んで歩いていこう\nもう迷わない 一歩ずつ前へ\nともに挑み つぎを創る この手を掴んで\nYou go, we go\nさあ、行こう\nその向こう\nYou go, we go"
+  },
+  {
+    "objectID": "posts/tinySA_pc-control/index.html#更新履歴",
+    "href": "posts/tinySA_pc-control/index.html#更新履歴",
+    "title": "tinySA UltraのPC制御",
+    "section": "更新履歴",
+    "text": "更新履歴\n\n2025-03-23\n\nLabVIEW VIをGitHubリポジトリに追加"
   }
 ]

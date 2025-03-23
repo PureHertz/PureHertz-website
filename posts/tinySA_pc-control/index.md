@@ -25,6 +25,12 @@ image: tinySA_pc-control/tinySA_beat.jpg
 
 ここでは、tinySAのPC制御法について簡単にまとめます。
 
+更新履歴
+--------
+
++ 2025-03-23
+  + LabVIEW VIをGitHubリポジトリに追加
+
 
 tinySA概要
 ----------
@@ -170,7 +176,7 @@ tinySAの掃引を再開します。
   y = d/32 - 172  # for tinySA Ultra
   ```
 
-  [^2]: LabVIEWだとリトルエディアンで上手く読み取れるが、この並びはビッグエディアンのような気もする。まだよく理解していないですね。
+  [^2]: LabVIEWだとリトルエディアンで上手く読み取れるが、この並びはビッグエディアンのような気もする。まだよく理解していないです。
 
 ### scan
 
@@ -233,12 +239,9 @@ tinySAのLabVIEW VI
 ------------------
 
 最低限のデータ取得動作ができるようにVIを作ってみました。
+GitHubにアップしていますので、興味のある方はご利用ください。
 
-- [tinySA_20250125.zip](tinySA_pc-control\tinySA_20250125.zip)
-  - scanraw.vi（レベルデータ取得）
-  - frequencies.vi（周波数データ取得）
-  - rbw.vi（RBW設定）
-  - attenuate.vi（減衰器設定）
+- <https://github.com/PureHertz/tinySA_labview>
 
 参考資料
 --------

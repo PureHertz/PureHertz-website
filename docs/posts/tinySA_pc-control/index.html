@@ -176,7 +176,7 @@ gtag('config', 'G-WS9ZCFP70B', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">2025-02-26</p>
+        <p class="date-modified">2025-03-23</p>
       </div>
     </div>
       
@@ -191,7 +191,8 @@ gtag('config', 'G-WS9ZCFP70B', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tinysa概要" id="toc-tinysa概要" class="nav-link active" data-scroll-target="#tinysa概要">tinySA概要</a></li>
+  <li><a href="#更新履歴" id="toc-更新履歴" class="nav-link active" data-scroll-target="#更新履歴">更新履歴</a></li>
+  <li><a href="#tinysa概要" id="toc-tinysa概要" class="nav-link" data-scroll-target="#tinysa概要">tinySA概要</a></li>
   <li><a href="#pcとの接続" id="toc-pcとの接続" class="nav-link" data-scroll-target="#pcとの接続">PCとの接続</a>
   <ul class="collapse">
   <li><a href="#tinysa側の設定" id="toc-tinysa側の設定" class="nav-link" data-scroll-target="#tinysa側の設定">tinySA側の設定</a></li>
@@ -223,6 +224,15 @@ gtag('config', 'G-WS9ZCFP70B', { 'anonymize_ip': true});
 <p>少し前に話題になった手のひらサイズの格安スペアナtinySA<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>。 懇意にしているメーカーの方が使っているのを見せていただき、自分も欲しくなって手に入れました。</p>
 <p>我々の研究では、それなりに高性能なスペアナが必要となる測定とは別に、適当な性能のスペアナで十分な用途（位相同期のモニタなど）も多く、そういった用途にちょうど良いのではないかと思います。 特に、遠隔地に置く装置の位相同期モニタにはいろいろ事務的な面でも都合がよいだろうと思っています。</p>
 <p>ここでは、tinySAのPC制御法について簡単にまとめます。</p>
+<section id="更新履歴" class="level2">
+<h2 class="anchored" data-anchor-id="更新履歴">更新履歴</h2>
+<ul>
+<li>2025-03-23
+<ul>
+<li>LabVIEW VIをGitHubリポジトリに追加</li>
+</ul></li>
+</ul>
+</section>
 <section id="tinysa概要" class="level2">
 <h2 class="anchored" data-anchor-id="tinysa概要">tinySA概要</h2>
 <p>tinySA Ultraの仕様は以下の通り。</p>
@@ -433,15 +443,9 @@ gtag('config', 'G-WS9ZCFP70B', { 'anonymize_ip': true});
 </section>
 <section id="tinysaのlabview-vi" class="level2">
 <h2 class="anchored" data-anchor-id="tinysaのlabview-vi">tinySAのLabVIEW VI</h2>
-<p>最低限のデータ取得動作ができるようにVIを作ってみました。</p>
+<p>最低限のデータ取得動作ができるようにVIを作ってみました。 GitHubにアップしていますので、興味のある方はご利用ください。</p>
 <ul>
-<li><a href="tinySA_pc-control\tinySA_20250125.zip">tinySA_20250125.zip</a>
-<ul>
-<li>scanraw.vi（レベルデータ取得）</li>
-<li>frequencies.vi（周波数データ取得）</li>
-<li>rbw.vi（RBW設定）</li>
-<li>attenuate.vi（減衰器設定）</li>
-</ul></li>
+<li><a href="https://github.com/PureHertz/tinySA_labview" class="uri">https://github.com/PureHertz/tinySA_labview</a></li>
 </ul>
 </section>
 <section id="参考資料" class="level2">
@@ -552,7 +556,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/purehertz\.quarto\.pub\/website");
+      var filterRegex = new RegExp("https:\/\/purehertz\.quarto\.pub\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
