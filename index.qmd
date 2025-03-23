@@ -24,8 +24,6 @@ listing:
 - 趣味で制作した楽曲
 - その他、研究・趣味に役立つかもしれない情報
 
-|
-
 ### Contents
 
 [About](about.qmd)
@@ -43,3 +41,10 @@ listing:
 
 ::: {#new-posts}
 :::
+
+
+### Pickup
+
+{{< video https://youtu.be/AwFKwa4n-Ho?si=oMhn8Gkamwnhnswe  width="560" height="315">}}
+
+
