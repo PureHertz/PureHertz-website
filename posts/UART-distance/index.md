@@ -1,7 +1,7 @@
 ---
 title: マイコン間のUART通信距離
 date: 2025-02-26
-date-modified: today
+date-modified: 2025-02-26
 categories: [電子回路, マイコン, シリアル通信]
 image: UART-distance/NanoEvery-Uno.jpg
 # lightbox: true

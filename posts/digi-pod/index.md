@@ -1,7 +1,7 @@
 ---
 title: デジタルポテンショを試してみた
 date: 2025-02-03
-date-modified: today
+date-modified: 2025-02-03
 categories: [電子回路, マイコン]
 image: digi-pod\digi-pod_test.jpg
 # lightbox: true

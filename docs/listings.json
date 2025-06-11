@@ -10,6 +10,7 @@
       "/posts/website_quartopub/index.html",
       "/posts/CircuitPython_KB2040/index.html",
       "/posts/Python_setup/index.html",
+      "/posts/2024-05-06/index.html",
       "/posts/write_Lattice_FPGA/index.html",
       "/posts/you_go_we_go/index.html",
       "/posts/2024-03-24/index.html",
@@ -32,9 +33,9 @@
     "listing": "/index.html",
     "items": [
       "/posts/xilinx_ise/index.html",
+      "/posts/tinySA_pc-control/index.html",
       "/posts/UART-distance/index.html",
       "/posts/digi-pod/index.html",
-      "/posts/tinySA_pc-control/index.html",
       "/posts/simple-digitizer/index.html",
       "/posts/website_quartopub/index.html",
       "/posts/CircuitPython_KB2040/index.html",

@@ -1,7 +1,7 @@
 ---
 title: "tinySA UltraのPC制御"
 date: 2025-01-25
-date-modified: today
+date-modified: 2025-03-23
 categories: [電子回路]
 image: tinySA_pc-control/tinySA_beat.jpg
 # lightbox: true

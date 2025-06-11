@@ -1,7 +1,7 @@
 ---
 title: "Xilinx ISE 14.7 最終版のインストールと書き込み"
 date: 2025-03-23
-date-modified: today
+date-modified: 2025-03-23
 categories: [電子回路,FPGA/CPLD]
 image: /common/electric-board.webp
 
