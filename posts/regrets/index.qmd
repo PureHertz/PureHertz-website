@@ -37,7 +37,7 @@ License
 
 ## Play
 
-{{< video https://youtu.be/mfvRIGRTfx0?si=ewKGcbPxglTHyXMN  width="560" height="315">}}
+<!-- {{< video https://youtu.be/mfvRIGRTfx0?si=ewKGcbPxglTHyXMN  width="560" height="315">}} -->
 
 <script type="application/javascript" src="https://embed.nicovideo.jp/watch/sm7834682/script?w=560&h=315"></script><noscript><a href="https://www.nicovideo.jp/watch/sm7834682">【鏡音リン】 regrets 【オリジナル】</a></noscript>
 

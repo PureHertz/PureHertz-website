@@ -30,7 +30,7 @@ License
 
 ## Play
 
-{{< video https://youtu.be/SEgh2vzszPA?si=nlzREjLe7DWnvbbx  width="560" height="315">}}
+<!-- {{< video https://youtu.be/SEgh2vzszPA?si=nlzREjLe7DWnvbbx  width="560" height="315">}} -->
 
 <script type="application/javascript" src="https://embed.nicovideo.jp/watch/sm9891167/script?w=560&h=315"></script><noscript><a href="https://www.nicovideo.jp/watch/sm9891167">【鏡音レン】Goodbye to My Days【オリジナル】</a></noscript>
 

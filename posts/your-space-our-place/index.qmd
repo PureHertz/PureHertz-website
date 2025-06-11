@@ -35,7 +35,7 @@ License
 
 ## Play
 
-{{< video https://youtu.be/y2ptAipi6to?si=ynemTo7sHhPdtxEU  width="560" height="315">}}
+<!-- {{< video https://youtu.be/y2ptAipi6to?si=ynemTo7sHhPdtxEU  width="560" height="315">}} -->
 
 <script type="application/javascript" src="https://embed.nicovideo.jp/watch/sm14214918/script?w=560&h=315"></script><noscript><a href="https://www.nicovideo.jp/watch/sm14214918">【鏡音レン】いつもの場所【オリジナル】</a></noscript>
 

@@ -36,7 +36,7 @@ License
 
 ## Play
 
-{{< video https://youtu.be/Aki96AM6d-s?si=WmhZVzXDnwWrJDGW  width="560" height="315">}}
+<!-- {{< video https://youtu.be/Aki96AM6d-s?si=WmhZVzXDnwWrJDGW  width="560" height="315">}} -->
 
 <script type="application/javascript" src="https://embed.nicovideo.jp/watch/sm16464295/script?w=560&h=315"></script><noscript><a href="https://www.nicovideo.jp/watch/sm16464295">【鏡音リン】ダンス万能説 -Dance Versatileness-【オリジナル】</a></noscript>
 
