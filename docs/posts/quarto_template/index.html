@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-06-29">
+<meta name="dcterms.date" content="2025-08-23">
 
-<title>Pythonの環境構築 – PureHertz Laboratory</title>
+<title>Quarto用技術文書テンプレート – PureHertz Laboratory</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,9 +77,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-3bcd0bf5043ad6fff489149eecee56c2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -160,9 +157,9 @@ gtag('config', 'G-WS9ZCFP70B', { 'anonymize_ip': true});
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Pythonの環境構築</h1>
+      <h1 class="title">Quarto用技術文書テンプレート</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Python</div>
+                <div class="quarto-category">Quarto</div>
               </div>
                   </div>
   </div>
@@ -174,14 +171,14 @@ gtag('config', 'G-WS9ZCFP70B', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">2024-06-29</p>
+        <p class="date">2025-08-23</p>
       </div>
     </div>
     
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">2024-06-29</p>
+        <p class="date-modified">2025-08-23</p>
       </div>
     </div>
       
@@ -196,10 +193,10 @@ gtag('config', 'G-WS9ZCFP70B', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#インストール" id="toc-インストール" class="nav-link active" data-scroll-target="#インストール">インストール</a></li>
-  <li><a href="#pythonのアップデート" id="toc-pythonのアップデート" class="nav-link" data-scroll-target="#pythonのアップデート">Pythonのアップデート</a></li>
-  <li><a href="#pipのアップデート" id="toc-pipのアップデート" class="nav-link" data-scroll-target="#pipのアップデート">pipのアップデート</a></li>
-  <li><a href="#spyderのインストール" id="toc-spyderのインストール" class="nav-link" data-scroll-target="#spyderのインストール">Spyderのインストール</a></li>
+  <li><a href="#概要" id="toc-概要" class="nav-link active" data-scroll-target="#概要">概要</a></li>
+  <li><a href="#technote" id="toc-technote" class="nav-link" data-scroll-target="#technote">technote</a></li>
+  <li><a href="#book" id="toc-book" class="nav-link" data-scroll-target="#book">book</a></li>
+  <li><a href="#その他" id="toc-その他" class="nav-link" data-scroll-target="#その他">その他</a></li>
   </ul>
 </nav>
     </div>
@@ -210,57 +207,92 @@ gtag('config', 'G-WS9ZCFP70B', { 'anonymize_ip': true});
 
 
 
-<p>Pythonを始めた当初はAnacondaを使って環境構築していましたが、更新が上手くいかなくなったりとよく分からない状態になっていたので、python.org経由の標準的な方法で環境を構築しなおしました。以下、その備忘録です。</p>
-<section id="インストール" class="level2">
-<h2 class="anchored" data-anchor-id="インストール">インストール</h2>
-<p>公式サイト <a href="https://www.python.org/" class="uri">https://www.python.org/</a> から最新版のインストーラをダウンロードしてインストールします。インストール時に <code>Add Python 3.x to PATH</code> にチェックを入れることで、自動的に環境変数にインストールディレクトリが追加され、ターミナルから <code>python</code> だけで直接呼び出せるようになります。</p>
-<p>通常は <code>Install Now</code> を選択してインストールを開始します。インストールするディレクトリを変更するなど、様々なオプションを選ぶときは<code>Costumize installation</code>を選択します。</p>
-<p>インストールが完了したら、ターミナルから</p>
-<pre><code>&gt; python -V</code></pre>
-<p>を実行し、パスが通っていることとバージョンを確認します。また、インストール先ディレクトリは環境変数 <code>PATH</code> から確認できます。</p>
-</section>
-<section id="pythonのアップデート" class="level2">
-<h2 class="anchored" data-anchor-id="pythonのアップデート">Pythonのアップデート</h2>
-<p><a href="https://www.python.org/" class="uri">https://www.python.org/</a> から最新版のインストーラをダウンロードして実行すれば、インストールされているPythonをアップデートできます。</p>
+<section id="概要" class="level2">
+<h2 class="anchored" data-anchor-id="概要">概要</h2>
+<p>できるだけプレーンに近いMarkdownファイルから、それなりの見た目の日本語PDFを出力するためのQuartoテンプレートを作ってみました。GitHubに置いてあります。</p>
+<ul>
+<li><a href="https://github.com/PureHertz/QuartoTemplates">PureHertz / QuartoTemplates</a></li>
+</ul>
+<p>単一のMarkdownファイルから技術資料を作るための<strong>technote</strong>と、複数のMarkdownファイルを各章とする技術書を作るための<strong>book</strong>の2種類を用意してあります。</p>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="python_update.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Pythonのアップデート"><img src="python_update.png" class="img-fluid figure-img" alt="Pythonのアップデート"></a></p>
-<figcaption>Pythonのアップデート</figcaption>
+<p><img src="quarto_template_assets/technote.png" class="img-fluid figure-img"></p>
+<figcaption>technoteテンプレート</figcaption>
 </figure>
 </div>
-</section>
-<section id="pipのアップデート" class="level2">
-<h2 class="anchored" data-anchor-id="pipのアップデート">pipのアップデート</h2>
-<p>Pythonのサードパーティーパッケージは <a href="https://pypi.org/">PyPI</a> で配布されています。これを管理・インストールするためのツールが<strong>pip</strong>で、アップデートして最新版に更新しておきます。</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode ps code-with-copy"><code class="sourceCode postscript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>&gt; python -m pip install --upgrade pip</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>一度実行すると、次回以降は</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode ps code-with-copy"><code class="sourceCode postscript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>&gt; pip install --upgrade pip</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>でOKです。パッケージ “xyz” をインストールする場合は</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode ps code-with-copy"><code class="sourceCode postscript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>&gt; pip install xyz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>を実行します。</p>
-</section>
-<section id="spyderのインストール" class="level2">
-<h2 class="anchored" data-anchor-id="spyderのインストール">Spyderのインストール</h2>
-<p>Pythonのエディタには <a href="https://www.spyder-ide.org/">Spyder</a> を使用しています。<a href="https://www.spyder-ide.org/" class="uri">https://www.spyder-ide.org/</a> からインストーラをダウンロードして実行します。</p>
-<p>Spyderは、自身にPythonパッケージが含まれているために別のPythonをインストールしなくても使えますが、先ほど上でインストールしたPythonを使う方がバージョンやパッケージの管理が楽だと思います。別にインストールしたPythonをSpyderで使うには、上部のメニューバーから<code>ツール</code> → <code>設定</code> と進み、「以下のPythonインタープリターを使う」を選択した後でPython環境があるディレクトリのPython.exeを選択します。</p>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="spyder_setup.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Spyderで使用するPythonの変更"><img src="spyder_setup.png" class="img-fluid figure-img" alt="Spyderで使用するPythonの変更"></a></p>
-<figcaption>Spyderで使用するPythonの変更</figcaption>
+<p><img src="quarto_template_assets/book1.png" class="img-fluid figure-img"></p>
+<figcaption>bookテンプレート1</figcaption>
 </figure>
 </div>
-<p>設定を反映するためにSpyderを再起動すると、以下のようなエラーが表示されます。</p>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="spyder_error.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Spyderのモジュール不足によるエラー"><img src="spyder_error.png" class="img-fluid figure-img" alt="Spyderのモジュール不足によるエラー"></a></p>
-<figcaption>Spyderのモジュール不足によるエラー</figcaption>
+<p><img src="quarto_template_assets/book2.png" class="img-fluid figure-img"></p>
+<figcaption>bookテンプレート2</figcaption>
 </figure>
 </div>
-<p>これは、指定したPython環境にSpyderの実行に必要なモジュールが足りていないためで、</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode ps code-with-copy"><code class="sourceCode postscript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>&gt; pip install spyder-kernels</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>&gt; pip install PyQt5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>を実行してそれらをインストールします。改めてSpyderを再起動し、エラーが消えていることを確認して下さい。</p>
+<p>Quartoについては、以下のリンクを参照してください。Quarto専用を含むMarkdownの表記方法も記載されています。</p>
+<ul>
+<li>https://quarto.org/</li>
+</ul>
+<p>Quartoの他に以下が必要です。フォントはStaticフォントをインストールしてください。VariableフォントだとLaTeXのレンダリングに失敗する可能性が高いです。</p>
+<ul>
+<li>TinyTeX: Quartoインストール後に<code>quarto install tinytex</code>を実行してください。</li>
+<li>サンセリフフォント
+<ul>
+<li><a href="https://fonts.google.com/noto/specimen/Noto+Sans">Noto Sans</a></li>
+<li><a href="https://fonts.google.com/noto/specimen/Noto+Sans+JP">Noto Sans JP</a></li>
+</ul></li>
+<li>セリフフォント
+<ul>
+<li><a href="https://fonts.google.com/noto/specimen/Noto+Serif">Noto Serif</a> (for book)</li>
+<li><a href="https://fonts.google.com/noto/specimen/Noto+Serif+JP">Noto Serif JP</a> (for book)</li>
+</ul></li>
+<li>等角フォント
+<ul>
+<li><a href="https://github.com/yuru7/PlemolJP/releases/tag/v3.0.0">PlemolJP</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="technote" class="level2">
+<h2 class="anchored" data-anchor-id="technote">technote</h2>
+<p><code>tecnote/</code>内は、<code>bxjsarticle</code>をもとにしたテクニカルノート用のテンプレートファイルセットです。Markdownファイル1つをPDF化します。</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>&gt; quarto render &lt;markdown file path&gt; --to pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>でレンダリングしてください。</p>
+<p>テンプレートのファイル構成は以下の通りです。</p>
+<ul>
+<li><code>_metadate.yml</code>: YAMLヘッダーの設定ファイル</li>
+<li><code>_preamble_technote.tex</code>: LaTeXのプリンブルファイル</li>
+<li><code>quarto_template.md</code>: Markdownファイル</li>
+<li><code>quarto_template_assets/</code>: 画像やその他の素材を格納するフォルダ</li>
+<li><code>the-optical-society.cls</code>: 参考文献のスタイルファイル</li>
+</ul>
+<p>Markdownファイルを作成し、YAMLヘッダーでタイトルなどを指定します。imageファイルなどの素材は、各章ごとに<code>quarto_template_assets</code>のようなフォルダを作成し、そこに配置して参照します。各章のMarkdownファイルと対応する素材フォルダを取り出せば、そのままbookテンプレートのひとつの章として使用できます。</p>
+<p>全体の設定は<code>_metadata.yml</code>で行いますが、基本的には変更不要です。</p>
+</section>
+<section id="book" class="level2">
+<h2 class="anchored" data-anchor-id="book">book</h2>
+<p><code>book/</code>内は<code>bxjsbook</code>をもとにした技術書用のテンプレートファイルセットです。Chapterごとに複数のMarkdownファイルを用意してまとめてPDF化します。</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>&gt; quarto render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>でレンダリングしてください。</p>
+<p>テンプレートのファイル構成は以下の通りです。</p>
+<ul>
+<li><code>_quarto.yml</code>: Quartoの設定ファイル</li>
+<li><code>_preamble_book.tex</code>: LaTeXのプリンブルファイル</li>
+<li><code>***.md</code>: 各章のMarkdownファイル</li>
+<li><code>***.qmd</code>: メインコンテンツ以外のMarkdownファイル</li>
+<li><code>***_assets/</code>: 各章の画像やその他の素材を格納するフォルダ</li>
+<li><code>the-optical-society.cls</code>: 参考文献のスタイルファイル</li>
+<li><code>_book/</code>: 出力フォルダ</li>
+</ul>
+<p>章ごとにMarkdownファイルを作成し、YAMLヘッダーで章のタイトルを指定します。テンプレートでは、<code>quarto_template_1.md</code>と<code>quarto_template_2.md</code>の2つの章を用意しています。imageファイルなどの素材は、各章ごとに<code>quarto_template_1_assets</code>や<code>quarto_template_2_assets</code>のようなフォルダを作成し、そこに配置して参照します。各章のMarkdownファイルと対応する素材フォルダを取り出せば、そのままtechnoteテンプレートでも使用できます。</p>
+<p>上記以外に、まえがき<code>index.qmd</code>とあとがき<code>postface.qmd</code>のMarkdownファイルも用意しています。<code>index.qmd</code>が無いと<code>quarto render</code>が通らないので注意してください。参考文献と奥付は<code>references.qmd</code>で自動生成します。参考文献を使用しない場合は、このファイルを編集して参考文献部分をコメントアウトしてください。</p>
+<p>全体の設定は<code>_quarto.yml</code>で行います。必要箇所を変更して使用してください。</p>
+</section>
+<section id="その他" class="level2">
+<h2 class="anchored" data-anchor-id="その他">その他</h2>
+<p>LaTeXエンジンにはLuaLaTeXを使用しているのですが、コンパイルにはなかなか時間がかかってしまいます。XeLaTeXの方が速いらしいのですが、LuaLaTeXの方が日本語の組版が安定しているようなので、こちらを採用しました。将来的にはXeLaTeXに切り替えるとか、Typstを使うとか、あり得るかもしれません。</p>
 
 
 </section>
@@ -693,38 +725,6 @@ gtag('config', 'G-WS9ZCFP70B', { 'anonymize_ip': true});
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

@@ -1,12 +1,14 @@
 ---
 title: "FPGA (MachXO2) の書き込み"
 date: "2024-04-28"
-date-modified: "2024-06-29"
+date-modified: "2024-10-11"
 categories: [電子回路, FPGA/CPLD]
 image: "/common/electric-board.webp"
 lightbox: true
 
 # UPDATE
+# + 20251011
+#   - JTAG信号のプルアップ/プルダウンについての記述を変更
 # + 20240629
 #   - 文章校正
 ---
@@ -48,7 +50,7 @@ Lattice SemiconductorのFPGA **LCMXO2-256HC**（MachXO2シリーズ）は、以�
 
 インストーラは、[Lattice Diamond設計ソフトウェアのページ](https://www.latticesemi.com/ja-JP/Products/DesignSoftwareAndIP/FPGAandLDS/LatticeDiamond)から`Diamond 3.13 64-bit for Windows`などOSに合わせてダウンロードします。執筆時のバージョンは3.13。
 
-![Lattice Diamondのダウンロードページ](Lattice-FPGA_1.png)
+![Lattice Diamondのダウンロードページ](Lattice-FPGA_1.png){width=250px}
 
 
 ## ライセンス認証
@@ -133,11 +135,15 @@ AE-FT2232のJTAGのピンアサインは以下の通り。
 | AD3             | TMS              |
 | GND             | GND              |
 
-各信号のプルアップ/プルダウンは接続先の開発ボード/デバイスに合わせます。ここでは、接続先の基板においてTCK、TDI、TDO、TMSが10kΩで3.3 Vにプルアップされているとして、変換モジュール回路上では特に変更しません。
+各信号のプルアップ/プルダウンは接続先の開発ボード/デバイスに合わせます。ここでは、接続先の基板においてプルアップ/プルダウンされているとして、変換モジュール回路上では特に変更しません。
 
 また、チャンネルAのロジックVCCには接続先の基板の3.3 Vを使用するとして、JP2Aジャンパーを外してVCCIOAに接続先基板のVCC 3.3 Vを繋ぎます。チャンネルBは使用しませんが、同様にJP2Bジャンパーも外してVCCIOBに接続先基板のVCC 3.3 Vに繋いでおきます。
 
 主電源にはUSBバスパワー5 Vを使用するので、JP1ジャンパーは取り付けたままにします。
+
+開発ボード/デバイス上では、下図のようにプルアップ/プルダウン抵抗を配します。全てプルアップしてしまったり高めの抵抗を使ってしまったりすると、通信が上手くいかないことがあります。（参考: [FTDI2232を用いたJTAG通信 Machxo2書き込み](https://meerstern.seesaa.net/article/471983173.html)）
+
+![JTAG信号のプルアップ/プルダウン](Lattice-FPGA_pullupdown.png)
 
 
 ### ドライバのインストール

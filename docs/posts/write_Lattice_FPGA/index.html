@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-3bcd0bf5043ad6fff489149eecee56c2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -147,7 +147,7 @@ gtag('config', 'G-WS9ZCFP70B', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">2024-06-29</p>
+        <p class="date-modified">2025-10-11</p>
       </div>
     </div>
       
@@ -262,7 +262,7 @@ gtag('config', 'G-WS9ZCFP70B', { 'anonymize_ip': true});
 <p>インストーラは、<a href="https://www.latticesemi.com/ja-JP/Products/DesignSoftwareAndIP/FPGAandLDS/LatticeDiamond">Lattice Diamond設計ソフトウェアのページ</a>から<code>Diamond 3.13 64-bit for Windows</code>などOSに合わせてダウンロードします。執筆時のバージョンは3.13。</p>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="Lattice-FPGA_1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Lattice Diamondのダウンロードページ"><img src="Lattice-FPGA_1.png" class="img-fluid figure-img" alt="Lattice Diamondのダウンロードページ"></a></p>
+<p><a href="Lattice-FPGA_1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Lattice Diamondのダウンロードページ"><img src="Lattice-FPGA_1.png" class="img-fluid figure-img" width="250" alt="Lattice Diamondのダウンロードページ"></a></p>
 <figcaption>Lattice Diamondのダウンロードページ</figcaption>
 </figure>
 </div>
@@ -403,9 +403,16 @@ Warning
 </tr>
 </tbody>
 </table>
-<p>各信号のプルアップ/プルダウンは接続先の開発ボード/デバイスに合わせます。ここでは、接続先の基板においてTCK、TDI、TDO、TMSが10kΩで3.3 Vにプルアップされているとして、変換モジュール回路上では特に変更しません。</p>
+<p>各信号のプルアップ/プルダウンは接続先の開発ボード/デバイスに合わせます。ここでは、接続先の基板においてプルアップ/プルダウンされているとして、変換モジュール回路上では特に変更しません。</p>
 <p>また、チャンネルAのロジックVCCには接続先の基板の3.3 Vを使用するとして、JP2Aジャンパーを外してVCCIOAに接続先基板のVCC 3.3 Vを繋ぎます。チャンネルBは使用しませんが、同様にJP2Bジャンパーも外してVCCIOBに接続先基板のVCC 3.3 Vに繋いでおきます。</p>
 <p>主電源にはUSBバスパワー5 Vを使用するので、JP1ジャンパーは取り付けたままにします。</p>
+<p>開発ボード/デバイス上では、下図のようにプルアップ/プルダウン抵抗を配します。全てプルアップしてしまったり高めの抵抗を使ってしまったりすると、通信が上手くいかないことがあります。（参考: <a href="https://meerstern.seesaa.net/article/471983173.html">FTDI2232を用いたJTAG通信 Machxo2書き込み</a>）</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><a href="Lattice-FPGA_pullupdown.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="JTAG信号のプルアップ/プルダウン"><img src="Lattice-FPGA_pullupdown.png" class="img-fluid figure-img" alt="JTAG信号のプルアップ/プルダウン"></a></p>
+<figcaption>JTAG信号のプルアップ/プルダウン</figcaption>
+</figure>
+</div>
 </section>
 <section id="ドライバのインストール" class="level3">
 <h3 class="anchored" data-anchor-id="ドライバのインストール">ドライバのインストール</h3>
@@ -517,7 +524,7 @@ Warning
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/purehertz\.quarto\.pub\/website");
+        var filterRegex = new RegExp("https:\/\/purehertz\.quarto\.pub\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
